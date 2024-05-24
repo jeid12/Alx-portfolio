@@ -1,5 +1,8 @@
 # MoodMatch
-![Mood Match Logo](app\static\img\Mood match Log.png)
+<p align="center">
+  <img src="app\static\img\Mood match Log.png" />
+</p>
+
 
 
 **MoodMatch: Where feelings meet recommendations.**

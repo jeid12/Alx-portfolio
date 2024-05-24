@@ -33,7 +33,7 @@ MoodMatch is a comprehensive emotional wellness project designed to understand y
 ## Technologies
 
 - **Backend**: Flask
-- **Emotion Recognition**: OpenCV with a pre-trained emotion recognition model (e.g., VGG-Face)
+- **Emotion Recognition**: OpenCV with a pre-trained emotion recognition model (Keras)
 - **Webcam Integration**: OpenCV
 - **Speech Recognition**: SpeechRecognition or a cloud-based API like Google Speech-to-Text
 - **Music Recommendation**: Spotipy
@@ -73,7 +73,7 @@ MoodMatch is a web-based application accessible globally. Integration with locat
 
 ### Branching and Merging Strategy
 
-- **Version Control**: Git (GitHub for remote repository)
+- **Version Control**: Git (https://github.com/jeid12/Alx-portfolio)
 - **Branching Strategy**: Feature Branch Workflow
   - **Master Branch**: Stable, deployed version.
   - **Feature Branches**: For new functionalities.
@@ -121,7 +121,7 @@ MoodMatch is not a replacement for professional therapy or mental health service
   - **Role**: CEO/Developer
   - **Email**: niyokwizerajd123@gmail.com
   - **tel**: +250784422138
-- **Tobi Adesiyan**
+- **Orojo Oluwatobi Ann**
   - **Role**: Developer
   - **Email**:tobiadesiyan007@gmail.com
   - **tel**:+234 706 526 4560

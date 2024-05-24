@@ -114,6 +114,12 @@ MoodMatch is a web-based application accessible globally. Integration with locat
 
 MoodMatch is not a replacement for professional therapy or mental health services. It cannot diagnose or treat mental health conditions. Emotion recognition may not always be accurate, and users should not rely solely on MoodMatch for critical decisions.
 
+## Week1 Work
+
+**Figma Design**: https://www.figma.com/design/iwH8uMNgbvheqiJKp6NU61/Moodmatch?node-id=0-1&t=pmJyMb7W0oVVwOca-1
+**setting up structure**
+**testing first functionality** 
+
 ## Contact
 
 **Team Member:**

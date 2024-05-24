@@ -121,7 +121,7 @@ MoodMatch is not a replacement for professional therapy or mental health service
   - **Role**: CEO/Developer
   - **Email**: niyokwizerajd123@gmail.com
   - **tel**: +250784422138
-- **Tobi Adesiyan **
+- **Tobi Adesiyan**
   - **Role**: Developer
   - **Email**:tobiadesiyan007@gmail.com
   - **tel**:+234 706 526 4560

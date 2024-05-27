@@ -1,12 +1,19 @@
-from flask import Flask, render_template, Response, redirect, url_for
+from flask import Flask, render_template, Response
 import cv2
 import numpy as np
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 import os
 import time
+import requests
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 app = Flask(__name__)
+
+# Initialize Spotify API client
+client_credentials_manager = SpotifyClientCredentials(client_id='b654b88b6ce043cc83b8e46dc7d493a4', client_secret='0394f353b6574c189ede048b699bbb55')
+sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 face_classifier = cv2.CascadeClassifier(r'C:\Users\user\Desktop\Emotion_Detection_CNN-main\haarcascade_frontalface_default.xml')
 classifier = load_model(r'C:\Users\user\Desktop\Emotion_Detection_CNN-main\model.h5')
@@ -15,6 +22,46 @@ emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surpri
 cap = cv2.VideoCapture(0)
 
 captured_data = []
+def get_youtube_link(song_name, artist):
+    # You can use the YouTube Data API to search for the song
+    # Here's a simplified example using YouTube's search URL
+    query = f"{song_name} {artist} official audio"
+    search_url = f"https://www.youtube.com/results?search_query={query}"
+    response = requests.get(search_url)
+    # Parse the response to extract the YouTube video link
+    # This can be more complex depending on the actual response format
+    # For simplicity, let's assume the first video link is the one we want
+    video_link = search_url  # Example link
+    return video_link
+
+def get_music_recommendations(emotion):
+    # You need to define mappings from detected emotions to Spotify playlists or genres
+    # This is a simplified example
+    if emotion == 'Happy':
+        playlist_id = '37i9dQZF1DXdPec7aLTmlC'  # Example: Happy playlist
+    elif emotion == 'Sad':
+        playlist_id = '37i9dQZF1DX7qK8ma5wgG1'  # Example: Sad playlist
+    else:
+        playlist_id = None  # You need to define other emotions
+        
+    if playlist_id:
+        # Retrieve playlist tracks
+        playlist_tracks = sp.playlist_tracks(playlist_id)
+        recommendations = []
+        for track in playlist_tracks['items']:
+            song_name = track['track']['name']
+            artist = track['track']['artists'][0]['name']
+            album = track['track']['album']['name']
+            youtube_link = get_youtube_link(song_name, artist)
+            recommendations.append({
+                'name': song_name,
+                'artist': artist,
+                'album': album,
+                'youtube_link': youtube_link
+        })
+        return recommendations
+    else:
+        return []
 
 def gen_frames():
     while True:
@@ -45,6 +92,10 @@ def gen_frames():
                     img_path = os.path.join('static/captured', f'{timestamp}.jpg')
                     cv2.imwrite(img_path, frame)
                     captured_data.append((img_path, label))
+
+                    # Get music recommendations based on emotion
+                    recommendations = get_music_recommendations(label)
+                    print(recommendations)  # For testing
                 else:
                     cv2.putText(frame, 'No Faces', (30, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
@@ -64,6 +115,11 @@ def video_feed():
 @app.route('/captured')
 def captured():
     return render_template('captured.html', captured_data=captured_data)
+
+@app.route('/recommendations/<emotion>')
+def recommendations(emotion):
+    recommendations = get_music_recommendations(emotion)
+    return render_template('music.html', recommendations=recommendations)
 
 if __name__ == '__main__':
     if not os.path.exists('static/captured'):

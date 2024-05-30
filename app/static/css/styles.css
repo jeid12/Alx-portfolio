@@ -66,8 +66,10 @@ body {
     font-size: 1.2em;
     text-decoration: none;
     color: #007bff;
+    transition: opacity 0.15s;
 }
 
 .back-link:hover {
     text-decoration: underline;
+    opacity: 0.8;
 }

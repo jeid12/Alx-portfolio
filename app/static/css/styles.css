@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    cursor: pointer;
 }
 
 .container {
@@ -67,6 +68,7 @@ body {
     text-decoration: none;
     color: #007bff;
     transition: opacity 0.15s;
+    cursor: pointer;
 }
 
 .back-link:hover {

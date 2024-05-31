@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-height: 50vh;
+    width: 60%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.container{
+   display: flex;
+   
+   justify-content: center;
+   align-items: center;
+   background: rgb(100, 90, 104);
+    
+    
+}
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 30%;
+}
+.message{
+    width: 40%;
+    padding: 10px;
+
+    
+}
+.message p{
+    font-size: medium;
+    font-weight: 200;
+    font-family: sans-serif;
+}
+.contacts{
+    padding: 10px;
+    width: 100%;
+}
+.contacts ul li{
+    margin-left: 10px;
+    list-style: none;
+    padding: 10px;
+}
+.contacts ul li a{
+    text-decoration: none;
+    color: black;
+}
+.msg-form{
+    margin-left: 10px;
+    padding:15px;
+}
+.no-resize {
+    resize: none;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  }
+  .msg-form label{
+    font-size: larger;
+    font-weight: 700;
+    font-family: sans-serif;
+  }
+  .names,.email,.reqst{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    
+
+  }
+  .email input{
+    width: 100%;
+    
+  }
+  .submit{
+    width: 100%;
+  }
+ .submit button{
+    width: 100%;
+    background-color: blue;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+ }
+ .msg-form input{
+    outline: none;
+    padding: 8px;
+ }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/contact.css">
+
+    <title>Reach out To us</title>
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+               <h1>For More Details
+                Contact Us!
+               </h1>
+                <hr>
+                <p class="msg">Send our team a quick message with your question, 
+                    project ideas and we’ll get back to you as soon as possible.
+                     We’re pretty responsive and will try to respond in a few hours 🙂
+                </p>
+                <div class="contacts">
+                    <strong>Location</strong>: <h5>Kigali, Rwanda or Nigeria, Lagos</h5>
+                    <strong>Phones</strong>:
+                    <ul>
+                        <li><a href="tel:+250 7844 22 138" class="phone-link"><i class="fa fa-phone" aria-hidden="true"></i> +250 7844 22 138</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=250784422138&text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> Send Message
+                          </a></li>
+                        <li><a href="tel:+234 706 526 4560" class="phone-link"><i class="fa fa-phone" aria-hidden="true"></i> +234 706 526 4560</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=2347065264560&text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> Send Message
+                          </a></li>
+                    </ul>
+                    <strong>Emails</strong>:
+                    <ul>
+                        <li><a href="mailto:niyokwizerajd123@gmail.com" class="email-link"><i class="fa fa-envelope" aria-hidden="true"></i>  niyokwizerajd123@gmail.com</a></li>
+                        <li><a href="mailto:tobiadesiyan007@gmail.com" class="email-link"><i class="fa fa-envelope" aria-hidden="true"></i>  tobiadesiyan007@gmail.com</a></li>
+                    </ul>
+                      
+                </div>
+
+        </div>
+        <div class="msg-form">
+            <form action="/contact" method="post">
+                <label for="fname">First Name</label>
+                <div class="names">
+                    <input type="text" name="fname" id="fname" required>
+                    <input type="text" name="lname" id="lname" required>
+                </div>
+                <label for="email">Email</label>
+                <div class="email">
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <label for="message">Message</label>
+                <div class="reqst">
+                    <textarea class="no-resize" name="message" id="message" cols="30" rows="10" required></textarea>
+                </div>
+                <div class="submit">
+                    <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

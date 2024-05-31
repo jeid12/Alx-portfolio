@@ -1,6 +1,7 @@
 absl-py==2.1.0
 astunparse==1.6.3
 blinker==1.8.2
+cachelib==0.13.0
 cachetools==5.3.3
 certifi==2024.2.2
 charset-normalizer==3.3.2
@@ -9,6 +10,7 @@ colorama==0.4.6
 contourpy==1.2.1
 cycler==0.12.1
 Flask==3.0.3
+Flask-MySQLdb==2.0.0
 flatbuffers==24.3.25
 fonttools==4.51.0
 gast==0.5.4
@@ -33,14 +35,17 @@ MarkupSafe==2.1.5
 matplotlib==3.9.0
 mdurl==0.1.2
 ml-dtypes==0.3.2
+mysqlclient==2.2.4
 namex==0.0.8
 numpy==1.26.4
+oauthlib==2.1.0
 opencv-python==4.9.0.80
 opt-einsum==3.3.0
 optree==0.11.0
 packaging==24.0
 pandas==2.2.2
 pillow==10.3.0
+pipdeptree==2.21.0
 proto-plus==1.23.0
 protobuf==4.25.3
 pyasn1==0.6.0
@@ -52,6 +57,7 @@ python-dotenv==1.0.1
 pytz==2024.1
 redis==5.0.4
 requests==2.32.2
+requests-oauthlib==1.1.0
 rich==13.7.1
 rsa==4.9
 seaborn==0.13.2

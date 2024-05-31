@@ -22,30 +22,23 @@ emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surpri
 cap = cv2.VideoCapture(0)
 
 captured_data = []
+
 def get_youtube_link(song_name, artist):
-    # You can use the YouTube Data API to search for the song
-    # Here's a simplified example using YouTube's search URL
     query = f"{song_name} {artist} official audio"
     search_url = f"https://www.youtube.com/results?search_query={query}"
     response = requests.get(search_url)
-    # Parse the response to extract the YouTube video link
-    # This can be more complex depending on the actual response format
-    # For simplicity, let's assume the first video link is the one we want
-    video_link = search_url  # Example link
+    video_link = search_url  # Simplified example
     return video_link
 
 def get_music_recommendations(emotion):
-    # You need to define mappings from detected emotions to Spotify playlists or genres
-    # This is a simplified example
     if emotion == 'Happy':
-        playlist_id = '37i9dQZF1DXdPec7aLTmlC'  # Example: Happy playlist
+        playlist_id = '37i9dQZF1DXdPec7aLTmlC'
     elif emotion == 'Sad':
-        playlist_id = '37i9dQZF1DX7qK8ma5wgG1'  # Example: Sad playlist
+        playlist_id = '37i9dQZF1DX7qK8ma5wgG1'
     else:
-        playlist_id = None  # You need to define other emotions
-        
+        playlist_id = None
+
     if playlist_id:
-        # Retrieve playlist tracks
         playlist_tracks = sp.playlist_tracks(playlist_id)
         recommendations = []
         for track in playlist_tracks['items']:
@@ -57,11 +50,26 @@ def get_music_recommendations(emotion):
                 'name': song_name,
                 'artist': artist,
                 'album': album,
-                'youtube_link': youtube_link
-        })
+                'youtube_link': youtube_link,
+                'emotion': emotion
+            })
         return recommendations
     else:
         return []
+
+def get_news_recommendations(emotion):
+    api_key = 'pub_4527685dd93bbe0abba82751512fa7eee9089'
+    url = f"https://newsdata.io/api/1/news?apikey={api_key}&q={emotion}"
+    response = requests.get(url).json()
+    articles = response.get('results', [])
+    news_recommendations = []
+    for article in articles:
+        news_recommendations.append({
+            'title': article['title'],
+            'description': article['description'],
+            'link': article['link']
+        })
+    return news_recommendations
 
 def gen_frames():
     while True:
@@ -87,15 +95,13 @@ def gen_frames():
                     label_position = (x, y)
                     cv2.putText(frame, label, label_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-                    # Save the captured image and emotion
                     timestamp = int(time.time())
                     img_path = os.path.join('static/captured', f'{timestamp}.jpg')
                     cv2.imwrite(img_path, frame)
                     captured_data.append((img_path, label))
 
-                    # Get music recommendations based on emotion
                     recommendations = get_music_recommendations(label)
-                    print(recommendations)  # For testing
+                    print(recommendations)
                 else:
                     cv2.putText(frame, 'No Faces', (30, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
@@ -116,10 +122,22 @@ def video_feed():
 def captured():
     return render_template('captured.html', captured_data=captured_data)
 
-@app.route('/recommendations/<emotion>')
-def recommendations(emotion):
-    recommendations = get_music_recommendations(emotion)
-    return render_template('music.html', recommendations=recommendations)
+@app.route('/recommendations')
+def recommendations():
+    emotion = 'Happy'  # Default emotion for general recommendations
+    music_recommendations = get_music_recommendations(emotion)
+    news_recommendations = get_news_recommendations(emotion)
+    return render_template('music.html', music_recommendations=music_recommendations, news_recommendations=news_recommendations)
+
+@app.route('/stories')
+def stories():
+    if captured_data:
+        latest_capture = captured_data[-1]
+        emotion = latest_capture[1]
+        news_recommendations = get_news_recommendations(emotion)
+        return render_template('story.html', news_recommendations=news_recommendations, emotion=emotion)
+    else:
+        return "No captured data available."
 
 if __name__ == '__main__':
     if not os.path.exists('static/captured'):

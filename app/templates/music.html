@@ -2,39 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Recommendations</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>Recommendations</title>
 </head>
 <body>
     <h1>Music Recommendations</h1>
-    <table>
-        <tr>
-            <th>Song Name</th>
-            <th>Artist</th>
-            <th>Album</th> <!-- Add album column -->
-        </tr>
-        {% for recommendation in recommendations %}
-        <tr>
-            <td>{{ recommendation.name }}</td>
-            <td>{{ recommendation.artist }}</td>
-            <td>{{ recommendation.album }}</td> <!-- Display album name -->
-            <td><a href="{{ recommendation.youtube_link }}" target="_blank">Listen</a></td> <!-- Add YouTube link -->
-        </tr>
+    <ul>
+        {% for recommendation in music_recommendations %}
+        <li>
+            <p>Name: {{ recommendation.name }}</p>
+            <p>Artist: {{ recommendation.artist }}</p>
+            <p>Album: {{ recommendation.album }}</p>
+            <p>Emotion: {{ recommendation.emotion }}</p>
+            <a href="{{ recommendation.youtube_link }}">Listen on YouTube</a>
+        </li>
         {% endfor %}
-    </table>
+    </ul>
+
+    <h1>News Recommendations</h1>
+    <ul>
+        {% for article in news_recommendations %}
+        <li>
+            <p>Title: {{ article.title }}</p>
+            <p>Description: {{ article.description }}</p>
+            <a href="{{ article.link }}">Read more</a>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Story Recommendations</title>
+</head>
+<body>
+    <h1>News Recommendations for Emotion: {{ emotion }}</h1>
+    <ul>
+        {% for article in news_recommendations %}
+        <li>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
+            <a href="{{ article.link }}">Read more</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

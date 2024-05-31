@@ -124,6 +124,21 @@ MoodMatch is not a replacement for professional therapy or mental health service
 **Figma Design**: https://www.figma.com/design/iwH8uMNgbvheqiJKp6NU61/Moodmatch?node-id=0-1&t=pmJyMb7W0oVVwOca-1
 **setting up structure**
 **testing first functionality** 
+## week2 Work
+** backend design, with emotion intergration,music recomandation,story recormation.**
+**collaboratively debugging some isuues**
+**front end integration with backend separatively**
+**current progress : 70%**
+
+##Week 3 work 
+** designing Landing page**
+**understanding functionality**
+**backend integration with mysqldb **
+**login and sign up authentication**
+**organizing folders and document**
+**final deployment**
+**presentation on 6 or 7 may 2024**
+
 
 ## Contact
 

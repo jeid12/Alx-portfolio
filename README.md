@@ -125,19 +125,19 @@ MoodMatch is not a replacement for professional therapy or mental health service
 **setting up structure**
 **testing first functionality** 
 ## week2 Work
-** backend design, with emotion intergration,music recomandation,story recormation.**
-**collaboratively debugging some isuues**
-**front end integration with backend separatively**
-**current progress : 70%**
+ -** backend design, with emotion intergration,music recomandation,story recormation.**
+ -**collaboratively debugging some isuues**
+ -**front end integration with backend separatively**
+ -**current progress : 70%**
 
-##Week 3 work 
-** designing Landing page**
-**understanding functionality**
-**backend integration with mysqldb **
-**login and sign up authentication**
-**organizing folders and document**
-**final deployment**
-**presentation on 6 or 7 may 2024**
+## Week 3 work 
+  -**designing Landing page**
+  -**understanding functionality**
+  -**backend integration with mysqldb **
+  -**login and sign up authentication**
+  -**organizing folders and document**
+  -**final deployment**
+  -**presentation on 6 or 7 may 2024**
 
 
 ## Contact

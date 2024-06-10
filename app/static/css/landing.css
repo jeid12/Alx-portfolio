@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-bar {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  background-color: #74D5FF; /* Add a background color for better visibility */
+}
+
+.logo {
+  width: 10%; /* Set background color of the logo section */
+}
+
+.logo img {
+  width: 100%;
+}
+
+.main-menu {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end; /* Align menu items to the right */
+}
+
+.main-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between menu items */
+}
+
+.main-menu ul li {
+  margin: 0;
+}
+
+.main-menu ul li a {
+  text-decoration: none;
+  color: #000; /* Change color as needed */
+  font-size: 16px;
+  font-family: Arial, sans-serif; /* Change font as needed */
+}
+
+.main-menu ul li a:hover {
+  color: #007bff; /* Add a hover effect */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center the contents horizontally */
+   /* Add padding to create space inside the container */
+}
+
+.welcome {
+  margin-top: 0;
+  display: flex;
+  background: #EFEEC9;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add some space below the welcome section */
+}
+
+.msg {
+  width: 60%; /* Set width of the text container to 60% */
+}
+
+.msg h1 {
+  color: #E8BFEC;
+  text-align: center;
+}
+
+.msg h4 {
+  margin-left: 60px;
+  text-align: left;
+}
+
+.msg p {
+  margin-right: 60px;
+  text-align: right;
+  color: #E8BFEC;
+}
+
+.image {
+  width: 40%; /* Set width of the image container to 40% */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cards {
+  display: flex;
+  width: 100%; /* Adjust width to match welcome section */
+  justify-content: space-between;
+  gap: 20px; /* Space between the cards */
+  margin-top: 20px; /* Add some space above the cards section */
+}
+
+.card {
+  flex: 1; /* Make cards take equal space */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.card-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.extra-content {
+  width: 100%;
+  margin-top: 40px; /* Add space between the cards section and extra content */
+  text-align: center;
+}
+
+.extra-content p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.additional-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.additional-cards .card {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-front {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.card1 {
+  background-image: url('../img/listenning.jpg');
+  background-size: cover; /* Ensures the background image covers the entire card */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center;
+  height: 50vh;
+}
+
+.card2 {
+  background-image: url('../img/reading.jpg');
+  background-size: cover; /* Ensures the background image covers the entire card */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center;
+  height: 50vh;
+}
+
+.card3 {
+  background-image: url('../img/chatting.jpg');
+  background-size: cover; /* Ensures the background image covers the entire card */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center;
+  height: 50vh;
+}
+.contact-section{
+  width: 100%;
+  background-image: url('../img/stading.jpg');
+  background-size: cover; /* Ensures the background image covers the entire card */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-position: center;
+  height: 50vh;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  font-size: 32px;
+  color: #ffffff;
+}
+.contact-section button{
+  width: 50%;
+  background-color: blue;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bottom-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  margin-top: 20px;
+}
+
+.column {
+  flex-basis: 30%; /* Adjust the width of columns as needed */
+}
+
+.column h3 {
+  margin-bottom: 10px;
+}
+.column p a{
+  text-decoration: none;
+  color: black;
+}

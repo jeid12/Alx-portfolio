@@ -1,9 +1,8 @@
 # MoodMatch
+
 <p align="center">
   <img src="app\static\img\Mood match Log.png" />
 </p>
-
-
 
 **MoodMatch: Where feelings meet recommendations.**
 
@@ -14,14 +13,17 @@ MoodMatch is a comprehensive emotional wellness project designed to understand y
 ## Key Features
 
 1. **Emotion Recognition**
+
    - Utilizes webcam technology to analyze your facial expressions and identify your current emotional state.
    - Leverages pre-trained models to recognize a range of emotions (e.g., happiness, sadness, anger, surprise).
 
 2. **Personalized Recommendations**
+
    - **MoodMatch Music**: Curates a personalized Spotify playlist based on your detected mood.
    - **Storytelling Integration**: Recommends stories that align with your emotional state (e.g., funny stories for happy moods, suspenseful stories for excitement).
 
 3. **Voice Recognition and Interaction**
+
    - Integrates speech-to-text conversion to understand your spoken commands.
    - Allows you to request specific types of recommendations (e.g., "play me a happy song" or "recommend a story").
 
@@ -46,6 +48,7 @@ MoodMatch is a comprehensive emotional wellness project designed to understand y
 - **Chatbot**: Rasa or Dialogflow
 
 ### Additional Considerations
+
 - **UI**: HTML, CSS, and potentially React
 - **Database (Optional)**: SQLAlchemy or mysqldb
 
@@ -66,11 +69,13 @@ MoodMatch is a web-based application accessible globally. Integration with locat
 ## Risks
 
 ### Technical Risks
+
 - **Emotion Recognition Accuracy**
 - **Integration Challenges**
 - **Data Security and Privacy**
 
 ### Non-Technical Risks
+
 - **User Adoption**
 - **Misuse of Recommendations**
 
@@ -104,14 +109,17 @@ MoodMatch is a web-based application accessible globally. Integration with locat
 ## Existing Solutions
 
 ### Emotion Recognition Apps
+
 - Similar: Emoleap, Feeling
 - Different: MoodMatch integrates music and story APIs for personalized recommendations.
 
 ### Music Recommendation Services
+
 - Similar: Spotify, Apple Music
 - Different: MoodMatch uses real-time emotion detection for dynamic recommendations.
 
 ### Chatbots for Mental Wellbeing
+
 - Similar: Woebot, Koko
 - Different: MoodMatch tailors conversation and recommendations based on real-time emotion detection.
 
@@ -123,26 +131,29 @@ MoodMatch is not a replacement for professional therapy or mental health service
 
 **Figma Design**: https://www.figma.com/design/iwH8uMNgbvheqiJKp6NU61/Moodmatch?node-id=0-1&t=pmJyMb7W0oVVwOca-1
 **setting up structure**
-**testing first functionality** 
+**testing first functionality**
+
 ## week2 Work
- -** backend design, with emotion intergration,music recomandation,story recormation.**
- -**collaboratively debugging some isuues**
- -**front end integration with backend separatively**
- -**current progress : 70%**
 
-## Week 3 work 
-  -**designing Landing page**
-  -**understanding functionality**
-  -**backend integration with mysqldb **
-  -**login and sign up authentication**
-  -**organizing folders and document**
-  -**final deployment**
-  -**presentation on 6 or 7 may 2024**
+-** backend design, with emotion intergration,music recomandation,story recormation.** -**collaboratively debugging some isuues** -**front end integration with backend separatively** -**current progress : 70%**
 
+## Week 3 work
+
+-**designing Landing page** -**understanding functionality** -**backend integration with mysqldb ** -**login and sign up authentication** -**organizing folders and document** -**final deployment** -**presentation on 6 or 7 may 2024**
+
+## Week4 Work
+
+**worked on final demo and final design**
+<img src="app\static\img\Screenshot (1001).png" />
+<img src="app\static\img\Screenshot (1002).png" />
+<img src="app\static\img\Screenshot (1003).png" />
+<img src="app\static\img\Screenshot (1004).png" />
+<img src="app\static\img\Screenshot (1005).png" />
 
 ## Contact
 
 **Team Member:**
+
 - **NIYOKWIZERA JEAN D AMOUR**
   - **Role**: CEO/Developer
   - **Email**: niyokwizerajd123@gmail.com
@@ -156,4 +167,3 @@ MoodMatch is not a replacement for professional therapy or mental health service
 
 Developed by Bro Jeid Ltd, KN 7 Ave, Kigali, Rwanda &
 Annalexbaby, Nigeria
-

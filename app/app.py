@@ -250,4 +250,4 @@ def submit_contact_form():
 if __name__ == '__main__':
     if not os.path.exists('static/captured'):
         os.makedirs('static/captured')
-    app.run(debug=True)
+    app.run(debug=False , host='0.0.0.0')

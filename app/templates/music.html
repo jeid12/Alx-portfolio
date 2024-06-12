@@ -1,32 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card, .news-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+        }
+        .card h2, .news-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .card p, .news-card p {
+            margin: 10px 0;
+        }
+        .card a, .news-card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .card a:hover, .news-card a:hover {
+            text-decoration: underline;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        .news-container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
+    <a href="/" class="back-button">Back</a>
     <h1>Music Recommendations</h1>
-    <ul>
+    <div class="container">
         {% for recommendation in music_recommendations %}
-        <li>
-            <p>Name: {{ recommendation.name }}</p>
-            <p>Artist: {{ recommendation.artist }}</p>
-            <p>Album: {{ recommendation.album }}</p>
-            <p>Emotion: {{ recommendation.emotion }}</p>
-            <a href="{{ recommendation.youtube_link }}">Listen on YouTube</a>
-        </li>
+        <div class="card">
+            <h2>{{ recommendation.name }}</h2>
+            <p><strong>Artist:</strong> {{ recommendation.artist }}</p>
+            <p><strong>Album:</strong> {{ recommendation.album }}</p>
+            <p><strong>Emotion:</strong> {{ recommendation.emotion }}</p>
+            <a href="{{ recommendation.youtube_link }}" target="_blank">Listen on YouTube</a>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 
-    <h1>News Recommendations</h1>
-    <ul>
-        {% for article in news_recommendations %}
-        <li>
-            <p>Title: {{ article.title }}</p>
-            <p>Description: {{ article.description }}</p>
-            <a href="{{ article.link }}">Read more</a>
-        </li>
-        {% endfor %}
-    </ul>
+    
+        
+    
 </body>
 </html>

@@ -1,77 +1,64 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-}
-
 .container {
-    text-align: center;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .title {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.video-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.video-feed {
-    height: 20vh;
-    width: auto;
-    border: 2px solid #ccc;
-    background-color: #fff;
-}
-
-.view-captured-link {
-    display: block;
-    margin-top: 20px;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.view-captured-link:hover {
-    text-decoration: underline;
-}
-
-.captured-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-.captured-table th, .captured-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
     text-align: center;
 }
 
-.captured-table img {
-    height: 100px;
-    width: auto;
+.columns {
+    display: flex;
 }
 
-.back-link {
+.column {
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.card-title {
+    margin-bottom: 10px;
+}
+
+.video-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.video-feed {
+    max-width: 100%;
+}
+
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align buttons to the right side of the column */
+    flex-grow: 1; /* Allow buttons to expand to fill the card vertically */
+}
+
+.button {
+    width: 100%;
     display: block;
-    margin-top: 20px;
-    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
     text-decoration: none;
-    color: #007bff;
-    transition: opacity 0.15s;
     cursor: pointer;
+    max-width: 100%; /* Set maximum width of buttons to match the card width */
 }
 
-.back-link:hover {
-    text-decoration: underline;
-    opacity: 0.8;
+.button:hover {
+    background-color: #0056b3;
 }

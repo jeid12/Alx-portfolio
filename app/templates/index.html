@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion Detector</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 <body>
     <div class="container">
         <h1 class="title">Emotion Detector</h1>
-        
-            
-                
-        <div class="video-container">
-            <img src="{{ url_for('video_feed') }}" class="video-feed">
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <h2 class="card-title">Scan your face</h2>
+                    <div class="video-container">
+                        <img src="{{ url_for('video_feed') }}" class="video-feed">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <h2 class="card-title">Options to choose</h2>
+                    <div class="buttons-column">
+                        <a href="/recommendations" class="button music-button">Music Recommendation</a>
+                        <a href="/stories" class="button story-button">Story Recommendation</a>
+                        <a href="/captured" class="button capture-button">Captured Data</a>
+                        <!-- Add a placeholder link for chatbot -->
+                        <a href="#" class="button chatbot-button">Chatbot</a>
+                        <a href="/logout" class="button chatbot-button">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="{{ url_for('captured') }}" class="view-captured-link">View Captured Photos and Emotions</a>
     </div>
 </body>
 </html>

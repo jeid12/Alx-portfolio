@@ -1,19 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    
     <title>Story Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .card p {
+            margin: 10px 0;
+        }
+        .card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>News Recommendations for Emotion: {{ emotion }}</h1>
-    <ul>
+    
+    <a href="/" class="back-button">Back</a>
+    <h1>News Recommendations for Detected Emotions: {{ emotions | join(', ') }}</h1>
+    <div class="container">
         {% for article in news_recommendations %}
-        <li>
+        <div class="card">
             <h2>{{ article.title }}</h2>
             <p>{{ article.description }}</p>
-            <a href="{{ article.link }}">Read more</a>
-        </li>
+            <a href="{{ article.link }}" target="_blank">Read more</a>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 </html>

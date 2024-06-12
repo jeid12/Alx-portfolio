@@ -33,8 +33,8 @@ mysql = MySQL(app)
 client_credentials_manager = SpotifyClientCredentials(client_id='b654b88b6ce043cc83b8e46dc7d493a4', client_secret='0394f353b6574c189ede048b699bbb55')
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-face_classifier = cv2.CascadeClassifier(r'C:\Users\user\Desktop\Emotion_Detection_CNN-main\haarcascade_frontalface_default.xml')
-classifier = load_model(r'C:\Users\user\Desktop\Emotion_Detection_CNN-main\model.h5')
+face_classifier = cv2.CascadeClassifier(r'../app/static/haarcascade_frontalface_default.xml')
+classifier = load_model(r'../app/static/model.h5')
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
 
 cap = cv2.VideoCapture(0)
@@ -220,8 +220,32 @@ def logout():
     session.pop('full_name', None)
     return redirect(url_for('login'))
 
-if __name__ == '__main__':
-    app.run(debug=True)    
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/submit_contact_form', methods=['POST'])
+def submit_contact_form():
+    if request.method == 'POST':
+        fname = request.form['cfname']
+        lname = request.form['clname']
+        email = request.form['cemail']
+        message = request.form['cmessage']
+
+        # Insert form data into the database
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('INSERT INTO contact (firstname, lastname, email, message) VALUES (%s, %s, %s, %s)', (fname, lname, email, message))
+        mysql.connection.commit()
+        cursor.close()
+
+        # Optionally, you can redirect the user to a thank you page or back to the contact page
+        flash('Your message has been sent successfully!')
+        return redirect(url_for('index'))  # Assuming 'index' is the route to your home page
+
+    
+
+   
 
 if __name__ == '__main__':
     if not os.path.exists('static/captured'):

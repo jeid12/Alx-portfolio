@@ -43,6 +43,22 @@ def contact():
         return redirect('/contact')
     
     return render_template('contact.html')
+@app.route('/send_email', methods=['POST'])
+def send_email():
+    fname = request.form['fname']
+    lname = request.form['lname']
+    email = request.form['email']
+    message = request.form['message']
+    
+    msg = Message(subject='Contact Form Submission',
+                  sender='niyokwizerajd123@gmail.com',
+                  recipients=['niyokwizerajd123@gmail.com', 'tobiadesiyan007@gmail.com'])  # Enter your recipient email addresses
+    
+    msg.body = f'First Name: {fname}\nLast Name: {lname}\nEmail: {email}\nMessage: {message}'
+
+    mail.send(msg)
+    
+    return 'Message sent successfully!'
 
 if __name__ == '__main__':
     app.run(debug=True)

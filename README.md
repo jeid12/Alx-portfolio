@@ -149,6 +149,9 @@ MoodMatch is not a replacement for professional therapy or mental health service
 <img src="app\static\img\Screenshot (1003).png" />
 <img src="app\static\img\Screenshot (1004).png" />
 <img src="app\static\img\Screenshot (1005).png" />
+<img src="app\static\img\Screenshot (1008).png" />
+<img src="app\static\img\Screenshot (1009).png" />
+<img src="app\static\img\Screenshot (1010).png" />
 
 ## Contact
 
